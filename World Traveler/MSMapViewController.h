@@ -1,5 +1,5 @@
 //
-//  MSViewController.h
+//  MSMapViewController.h
 //  World Traveler
 //
 //  Created by Mat Sletten on 6/25/14.
@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MSViewController : UIViewController
+@interface MSMapViewController : UIViewController
+
+@property (strong, nonatomic) IBOutlet MKMapView *mapView;
+
 
 @end

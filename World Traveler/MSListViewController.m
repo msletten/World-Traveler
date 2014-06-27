@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Mat Sletten. All rights reserved.
 //
 
-#import "MSViewController.h"
+#import "MSListViewController.h"
 
-@interface MSViewController ()
+@interface MSListViewController ()
 
 @end
 
-@implementation MSViewController
+@implementation MSListViewController
 
 - (void)viewDidLoad
 {
@@ -26,4 +26,6 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)refreshBarButtonPressed:(UIBarButtonItem *)sender {
+}
 @end
