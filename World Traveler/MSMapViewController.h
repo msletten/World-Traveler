@@ -8,10 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "Venue.h"
+
 
 @interface MSMapViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
+@property (strong, nonatomic) Venue *venue;
+@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *addressLabel;
 
 
+- (IBAction)ShowDirectionsBarButtonPressed:(UIBarButtonItem *)sender;
 @end

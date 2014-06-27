@@ -19,7 +19,7 @@
 @property (nonatomic, retain) NSString * city;
 @property (nonatomic, retain) NSString * country;
 @property (nonatomic, retain) NSString * crossStreet;
-@property (nonatomic, retain) NSNumber * ing;
+@property (nonatomic, retain) NSNumber * lng;
 @property (nonatomic, retain) NSNumber * lat;
 @property (nonatomic, retain) NSString * postalCode;
 @property (nonatomic, retain) NSString * state;

@@ -17,7 +17,7 @@
 @dynamic city;
 @dynamic country;
 @dynamic crossStreet;
-@dynamic ing;
+@dynamic lng;
 @dynamic lat;
 @dynamic postalCode;
 @dynamic state;
