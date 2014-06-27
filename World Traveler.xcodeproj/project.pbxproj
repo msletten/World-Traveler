@@ -21,8 +21,6 @@
 		08A51B84195B98630073CBA7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A51B66195B98620073CBA7 /* UIKit.framework */; };
 		08A51B8C195B98630073CBA7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08A51B8A195B98630073CBA7 /* InfoPlist.strings */; };
 		08A51B8E195B98630073CBA7 /* World_TravelerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A51B8D195B98630073CBA7 /* World_TravelerTests.m */; };
-		08A51B9C195B9BD50073CBA7 /* AFMMRecordResponseSerializationMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A51B99195B9BD50073CBA7 /* AFMMRecordResponseSerializationMapper.m */; };
-		08A51B9D195B9BD50073CBA7 /* AFMMRecordResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A51B9B195B9BD50073CBA7 /* AFMMRecordResponseSerializer.m */; };
 		08A51BA2195BB9730073CBA7 /* MSMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A51BA1195BB9730073CBA7 /* MSMapViewController.m */; };
 		08A51BA8195CB0020073CBA7 /* WorldTravelerModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 08A51BA6195CB0020073CBA7 /* WorldTravelerModel.xcdatamodeld */; };
 		08A51BAA195CB0620073CBA7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A51BA9195CB0620073CBA7 /* CoreData.framework */; };
@@ -32,6 +30,11 @@
 		08A51BB6195CF04F0073CBA7 /* FSCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A51BB5195CF04F0073CBA7 /* FSCategory.m */; };
 		08A51BB9195CF04F0073CBA7 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A51BB8195CF04F0073CBA7 /* Location.m */; };
 		08A51BBD195CF1030073CBA7 /* MSRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A51BBC195CF1030073CBA7 /* MSRecord.m */; };
+		08A51BC1195DDCF20073CBA7 /* MSFourSquareSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A51BC0195DDCF20073CBA7 /* MSFourSquareSessionManager.m */; };
+		08A51BC3195DE21D0073CBA7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A51BC2195DE21D0073CBA7 /* MapKit.framework */; };
+		08A51BC5195DE2290073CBA7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A51BC4195DE2290073CBA7 /* CoreLocation.framework */; };
+		08A51BD2195DEBA40073CBA7 /* AFMMRecordResponseSerializationMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A51BCF195DEBA40073CBA7 /* AFMMRecordResponseSerializationMapper.m */; };
+		08A51BD3195DEBA40073CBA7 /* AFMMRecordResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A51BD1195DEBA40073CBA7 /* AFMMRecordResponseSerializer.m */; };
 		6B9BCE274D7945B38A63BE6D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BE9C8F8AF1E48AFB80D2151 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -65,10 +68,6 @@
 		08A51B89195B98630073CBA7 /* World TravelerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "World TravelerTests-Info.plist"; sourceTree = "<group>"; };
 		08A51B8B195B98630073CBA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		08A51B8D195B98630073CBA7 /* World_TravelerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = World_TravelerTests.m; sourceTree = "<group>"; };
-		08A51B98195B9BD50073CBA7 /* AFMMRecordResponseSerializationMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFMMRecordResponseSerializationMapper.h; sourceTree = "<group>"; };
-		08A51B99195B9BD50073CBA7 /* AFMMRecordResponseSerializationMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFMMRecordResponseSerializationMapper.m; sourceTree = "<group>"; };
-		08A51B9A195B9BD50073CBA7 /* AFMMRecordResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFMMRecordResponseSerializer.h; sourceTree = "<group>"; };
-		08A51B9B195B9BD50073CBA7 /* AFMMRecordResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFMMRecordResponseSerializer.m; sourceTree = "<group>"; };
 		08A51BA0195BB9730073CBA7 /* MSMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMapViewController.h; sourceTree = "<group>"; };
 		08A51BA1195BB9730073CBA7 /* MSMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMapViewController.m; sourceTree = "<group>"; };
 		08A51BA7195CB0020073CBA7 /* WorldTravelerModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WorldTravelerModel.xcdatamodel; sourceTree = "<group>"; };
@@ -85,6 +84,14 @@
 		08A51BB8195CF04F0073CBA7 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		08A51BBB195CF1030073CBA7 /* MSRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSRecord.h; sourceTree = "<group>"; };
 		08A51BBC195CF1030073CBA7 /* MSRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSRecord.m; sourceTree = "<group>"; };
+		08A51BBF195DDCF20073CBA7 /* MSFourSquareSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSFourSquareSessionManager.h; sourceTree = "<group>"; };
+		08A51BC0195DDCF20073CBA7 /* MSFourSquareSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSFourSquareSessionManager.m; sourceTree = "<group>"; };
+		08A51BC2195DE21D0073CBA7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		08A51BC4195DE2290073CBA7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		08A51BCE195DEBA40073CBA7 /* AFMMRecordResponseSerializationMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFMMRecordResponseSerializationMapper.h; sourceTree = "<group>"; };
+		08A51BCF195DEBA40073CBA7 /* AFMMRecordResponseSerializationMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFMMRecordResponseSerializationMapper.m; sourceTree = "<group>"; };
+		08A51BD0195DEBA40073CBA7 /* AFMMRecordResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFMMRecordResponseSerializer.h; sourceTree = "<group>"; };
+		08A51BD1195DEBA40073CBA7 /* AFMMRecordResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFMMRecordResponseSerializer.m; sourceTree = "<group>"; };
 		37A6E3CC317F4C9E84ECEE18 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		8BE9C8F8AF1E48AFB80D2151 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -94,6 +101,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08A51BC5195DE2290073CBA7 /* CoreLocation.framework in Frameworks */,
+				08A51BC3195DE21D0073CBA7 /* MapKit.framework in Frameworks */,
 				08A51BAA195CB0620073CBA7 /* CoreData.framework in Frameworks */,
 				08A51B65195B98620073CBA7 /* CoreGraphics.framework in Frameworks */,
 				08A51B67195B98620073CBA7 /* UIKit.framework in Frameworks */,
@@ -138,8 +147,10 @@
 		08A51B61195B98620073CBA7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				08A51BCD195DEBA40073CBA7 /* AFMMRecordResponseSerializer */,
+				08A51BC4195DE2290073CBA7 /* CoreLocation.framework */,
+				08A51BC2195DE21D0073CBA7 /* MapKit.framework */,
 				08A51BA9195CB0620073CBA7 /* CoreData.framework */,
-				08A51B97195B9BD50073CBA7 /* AFMMRecordResponseSerializer */,
 				08A51B62195B98620073CBA7 /* Foundation.framework */,
 				08A51B64195B98620073CBA7 /* CoreGraphics.framework */,
 				08A51B66195B98620073CBA7 /* UIKit.framework */,
@@ -154,6 +165,7 @@
 			children = (
 				08A51BA3195CAF770073CBA7 /* Initialization */,
 				08A51BA5195CAFB20073CBA7 /* Views */,
+				08A51BBE195DDC9C0073CBA7 /* API */,
 				08A51BA4195CAF820073CBA7 /* Model */,
 				08A51B7A195B98630073CBA7 /* Images.xcassets */,
 				08A51B69195B98620073CBA7 /* Supporting Files */,
@@ -188,17 +200,6 @@
 				08A51B8A195B98630073CBA7 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		08A51B97195B9BD50073CBA7 /* AFMMRecordResponseSerializer */ = {
-			isa = PBXGroup;
-			children = (
-				08A51B98195B9BD50073CBA7 /* AFMMRecordResponseSerializationMapper.h */,
-				08A51B99195B9BD50073CBA7 /* AFMMRecordResponseSerializationMapper.m */,
-				08A51B9A195B9BD50073CBA7 /* AFMMRecordResponseSerializer.h */,
-				08A51B9B195B9BD50073CBA7 /* AFMMRecordResponseSerializer.m */,
-			);
-			path = AFMMRecordResponseSerializer;
 			sourceTree = "<group>";
 		};
 		08A51BA3195CAF770073CBA7 /* Initialization */ = {
@@ -248,6 +249,26 @@
 				08A51BAC195CF04E0073CBA7 /* Menu.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		08A51BBE195DDC9C0073CBA7 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				08A51BBF195DDCF20073CBA7 /* MSFourSquareSessionManager.h */,
+				08A51BC0195DDCF20073CBA7 /* MSFourSquareSessionManager.m */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		08A51BCD195DEBA40073CBA7 /* AFMMRecordResponseSerializer */ = {
+			isa = PBXGroup;
+			children = (
+				08A51BCE195DEBA40073CBA7 /* AFMMRecordResponseSerializationMapper.h */,
+				08A51BCF195DEBA40073CBA7 /* AFMMRecordResponseSerializationMapper.m */,
+				08A51BD0195DEBA40073CBA7 /* AFMMRecordResponseSerializer.h */,
+				08A51BD1195DEBA40073CBA7 /* AFMMRecordResponseSerializer.m */,
+			);
+			path = AFMMRecordResponseSerializer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -384,11 +405,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				08A51BA8195CB0020073CBA7 /* WorldTravelerModel.xcdatamodeld in Sources */,
-				08A51B9D195B9BD50073CBA7 /* AFMMRecordResponseSerializer.m in Sources */,
+				08A51BC1195DDCF20073CBA7 /* MSFourSquareSessionManager.m in Sources */,
+				08A51BD3195DEBA40073CBA7 /* AFMMRecordResponseSerializer.m in Sources */,
 				08A51BB3195CF04F0073CBA7 /* Contact.m in Sources */,
 				08A51BA2195BB9730073CBA7 /* MSMapViewController.m in Sources */,
 				08A51BB0195CF04F0073CBA7 /* Venue.m in Sources */,
-				08A51B9C195B9BD50073CBA7 /* AFMMRecordResponseSerializationMapper.m in Sources */,
+				08A51BD2195DEBA40073CBA7 /* AFMMRecordResponseSerializationMapper.m in Sources */,
 				08A51B73195B98620073CBA7 /* MSAppDelegate.m in Sources */,
 				08A51B79195B98620073CBA7 /* MSListViewController.m in Sources */,
 				08A51BB6195CF04F0073CBA7 /* FSCategory.m in Sources */,

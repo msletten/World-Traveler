@@ -1,5 +1,5 @@
 // AFMMRecordResponseSerializer.h
-//
+// version 1.2.0 (current version has debugger)
 // Copyright (c) 2013 Mutual Mobile (http://www.mutualmobile.com/)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -24,14 +24,7 @@
 
 #import <CoreData/CoreData.h>
 
-/**
- AFMMRecordResponseSerializerWithDataKey is used to access the the response data stored in userInfo after an error is returned from an AFNetworking request.
- */
-extern NSString * const AFMMRecordResponseSerializerWithDataKey;
-
 @protocol AFMMRecordResponseSerializationEntityMapping;
-
-@class MMRecordOptions;
 
 /**
  AFMMRecordResponseSerializer is a response serializer for AFNetworking that can serialize an HTTP
@@ -73,29 +66,6 @@ extern NSString * const AFMMRecordResponseSerializerWithDataKey;
 + (instancetype)serializerWithManagedObjectContext:(NSManagedObjectContext *)context
                           responseObjectSerializer:(AFHTTPResponseSerializer *)serializer
                                       entityMapper:(id<AFMMRecordResponseSerializationEntityMapping>)mapper;
-
-/**
- This method allows you to set a specific set of options for the MMRecord response serializer.
- Unlike the MMRecord setOptions method, where the options are implicitly applied only to the request
- following the invocation of setOptions, this method will apply the referenced options to all
- requests made by this class.
- 
- By default the response serializer will use the default options for the initial entity's MMRecord
- subclass. This means that attributes like the keyPathForResponseObject will be applied correctly,
- but also means that subclassing the MMRecord defaultOptions method for various record classes is
- indeed possible. With great power comes greater responsibility - use this wisely!
- 
- @param options The options object to be set on AFMMRecordResponseSerializer.
- @discussion If no options are set then the default MMRecord options are applied to the requests.
- @warning Passing nil will restore the default MMRecord options.
- */
-+ (void)registerOptions:(MMRecordOptions *)options;
-
-/**
- Returns the current set of options for the response serializer. If no options have been set this
- method will return nil.
- */
-+ (MMRecordOptions *)currentOptions;
 
 @end
 

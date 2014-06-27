@@ -1,5 +1,5 @@
 // AFMMRecordResponseSerializationMapper.h
-//
+// version 1.2.0 (current version has debugger)
 // Copyright (c) 2013 Mutual Mobile (http://www.mutualmobile.com/)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy

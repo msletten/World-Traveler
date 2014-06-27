@@ -1,5 +1,5 @@
 // AFMMRecordResponseSerializer.m
-//
+// version 1.2.0 (current version has debugger)
 // Copyright (c) 2013 Mutual Mobile (http://www.mutualmobile.com/)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -25,10 +25,6 @@
 #import "MMRecord.h"
 #import "MMRecordResponse.h"
 
-static MMRecordOptions* MM_responseSerializerRecordOptions;
-
-NSString * const AFMMRecordResponseSerializerWithDataKey = @"AFMMRecordResponseSerializerWithDataKey";
-
 @interface AFMMRecordResponseSerializer ()
 
 @property (nonatomic, strong) NSManagedObjectContext *context;
@@ -53,50 +49,22 @@ NSString * const AFMMRecordResponseSerializerWithDataKey = @"AFMMRecordResponseS
     return serializer;
 }
 
-+ (void)registerOptions:(MMRecordOptions *)options {
-    MM_responseSerializerRecordOptions = options;
-}
-
-+ (MMRecordOptions *)currentOptions {
-    if (MM_responseSerializerRecordOptions != nil) {
-        return MM_responseSerializerRecordOptions;
-    }
-    
-    return nil;
-}
-
 
 #pragma mark - Private
 
-+ (MMRecordOptions *)currentOptionsWithMMRecordSubclass:(Class)recordClass {
-    if (MM_responseSerializerRecordOptions != nil) {
-        return MM_responseSerializerRecordOptions;
-    }
-    
-    MMRecordOptions *options = [recordClass defaultOptions];
-    
-    return options;
-}
-
 - (NSArray *)responseArrayFromResponseObject:(id)responseObject
-                    keyPathForResponseObject:(NSString *)keyPathForResponseObject {
-    id recordResponseObject = responseObject;
+                               initialEntity:(NSEntityDescription *)initialEntity {
+    Class managedObjectClass = NSClassFromString([initialEntity managedObjectClassName]);
     
-    if (keyPathForResponseObject != nil) {
-        recordResponseObject = [responseObject valueForKeyPath:keyPathForResponseObject];
-    } else {
-        recordResponseObject = responseObject;
+    NSString *keyPath = [managedObjectClass keyPathForResponseObject];
+    
+    NSArray *responseArray = [responseObject valueForKeyPath:keyPath];
+    
+    if ([responseArray isKindOfClass:[NSArray class]] == NO) {
+        responseArray = @[responseArray];
     }
     
-    if (recordResponseObject == nil || [recordResponseObject isKindOfClass:[NSNull class]]) {
-        recordResponseObject = [NSArray array];
-    }
-    
-    if ([recordResponseObject isKindOfClass:[NSArray class]] == NO) {
-        recordResponseObject = [NSArray arrayWithObject:recordResponseObject];
-    }
-    
-    return recordResponseObject;
+    return responseArray;
 }
 
 - (NSManagedObjectContext *)backgroundContext {
@@ -132,67 +100,33 @@ NSString * const AFMMRecordResponseSerializerWithDataKey = @"AFMMRecordResponseS
 - (id)responseObjectForResponse:(NSURLResponse *)response
                            data:(NSData *)data
                           error:(NSError *__autoreleasing *)error {
+    NSError *serializationError = nil;
     
     id responseObject = [self.HTTPResponseSerializer responseObjectForResponse:response
                                                                           data:data
-                                                                         error:error];
+                                                                         error:&serializationError];
     
-    if (*error != nil) {
-        NSMutableDictionary *userInfo = [(*error).userInfo mutableCopy];
-        NSString *responseData = [[NSString alloc] initWithData:data
-                                                       encoding:NSUTF8StringEncoding];
-        
-        [userInfo setValue:responseData
-                    forKey:AFMMRecordResponseSerializerWithDataKey];
-        
-        NSError *newError = [NSError errorWithDomain:(*error).domain
-                                                code:(*error).code
-                                            userInfo:userInfo];
-        (*error) = newError;
-    }
+    NSAssert(([responseObject isKindOfClass:[NSDictionary class]] ||
+              [responseObject isKindOfClass:[NSArray class]]),
+             @"Response object should be of type array or dictionary.");
+
     
     NSEntityDescription *initialEntity = [self.entityMapper recordResponseSerializer:self
                                                                    entityForResponse:response
                                                                       responseObject:responseObject
                                                                              context:self.context];
     
-    Class managedObjectClass = NSClassFromString([initialEntity managedObjectClassName]);
-    
-    MMRecordOptions *options = [[self class] currentOptionsWithMMRecordSubclass:managedObjectClass];
-    
-    MMRecordDebugger *debugger = [[MMRecordDebugger alloc] init];
-    options.debugger = debugger;
-    
-    // Verify that the server responded in an expected manner.
-    if (!([responseObject isKindOfClass:[NSDictionary class]]) &&
-        !([responseObject isKindOfClass:[NSArray class]])) {
-        NSString *errorDescription = [NSString stringWithFormat:@"The response object should be an array or dictionary. The returned response object type was: %@", NSStringFromClass([responseObject class])];
-        NSDictionary *parameters = [debugger parametersWithKeys:@[MMRecordDebuggerParameterErrorDescription] values:@[errorDescription]];
-        
-        [debugger handleErrorCode:MMRecordErrorCodeInvalidResponseFormat
-                   withParameters:parameters];
-        
-        *error = [debugger primaryError];
-        
-        return nil;
-    }
-    
-    NSString *keyPathForResponseObject = [options keyPathForResponseObject];
-
     NSArray *responseArray = [self responseArrayFromResponseObject:responseObject
-                                          keyPathForResponseObject:keyPathForResponseObject];
+                                                     initialEntity:initialEntity];
     
     NSManagedObjectContext *backgroundContext = [self backgroundContext];
     
     MMRecordResponse *recordResponse = [MMRecordResponse responseFromResponseObjectArray:responseArray
-                                                                           initialEntity:initialEntity
-                                                                                 context:self.context
-                                                                                 options:options];
+                                                                     initialEntity:initialEntity
+                                                                           context:self.context];
     
     NSArray *records = [self recordsFromMMRecordResponse:recordResponse
                                        backgroundContext:backgroundContext];
-    
-    *error = [debugger primaryError];
     
     return records;
 }

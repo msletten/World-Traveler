@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MSListViewController : UIViewController
+@interface MSListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+
 - (IBAction)refreshBarButtonPressed:(UIBarButtonItem *)sender;
 
 @end
