@@ -7,6 +7,7 @@
 //
 
 #import "MSDirectionsViewController.h"
+#import "MSDirectionsListViewController.h"
 
 @interface MSDirectionsViewController ()
 
@@ -31,6 +32,8 @@
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     [self. locationManager startUpdatingLocation];
+    
+    self.directionsMap.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,7 +44,18 @@
 
 - (IBAction)listDirectionsBarButtonPressed:(UIBarButtonItem *)sender
 {
-    
+    [self performSegueWithIdentifier:@"directionsToListSegue" sender:nil];
+}
+
+#pragma mark - Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.destinationViewController isKindOfClass:[MSDirectionsListViewController class]])
+    {
+        MSDirectionsListViewController *directionsListVC = segue.destinationViewController;
+        directionsListVC.steps = self.steps;
+    }
 }
 
 #pragma mark - CLLocationManagerDelegate
@@ -88,7 +102,7 @@
     }];
 }
 
-#pragma mark - Route Helper
+#pragma mark - Route Helpers
 //Next we'll create a helper method which will allow us to manage the response from the MKDirectionsRequest. Remember to set the property self.steps equal to our response. Our response contains an array of routes. Each route contains a series of steps and the steps have text instructions.
 
 - (void)showRoute:(MKDirectionsResponse *)response
@@ -96,13 +110,20 @@
     self.steps = response.routes;
     for (MKRoute *route in self.steps)
     {
-        for (MKRouteStep *step in route.steps)
-        {
-            NSLog(@"step instructions %@", step.instructions);
-        }
+        [self.directionsMap addOverlay:route.polyline level:MKOverlayLevelAboveRoads];
+//        for (MKRouteStep *step in route.steps)
+//        {
+//            NSLog(@"step instructions %@", step.instructions);
+//        }
     }
 }
-
-
+//By implementing MKMapView delegate we can draw the route we received from the MKDirectionResponse. To implement this method it is necessary to create a MKPolylineRenderer object that creates a visual representation for an MKPolyline overlay object. We also set two properties to control the color and the width of the path.
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay
+{
+    MKPolylineRenderer *renderer = [[MKPolylineRenderer alloc] initWithOverlay:overlay];
+    renderer.strokeColor = [UIColor redColor];
+    renderer.lineWidth = 3.0;
+    return renderer;
+}
 
 @end

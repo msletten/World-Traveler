@@ -17,6 +17,9 @@
 static NSString *const kMSCLIENTID = @"3VSOUARZJAMSZULCEARWLX5BTYL2U5XOE1ML4FRUTMC5EGLJ";
 static NSString *const kMSCLIENTSECRET = @"15C555UQY5XAE2WAHTTFB5WV1SAQRIQYOSU2EU35WLTY2QRH";
 
+#define latitudeOffset 0.01
+#define longitudeOffset 0.01
+
 //Four Square Client ID above
 //Four Square Client Secret above
 
@@ -82,7 +85,7 @@ static NSString *const kMSCLIENTSECRET = @"15C555UQY5XAE2WAHTTFB5WV1SAQRIQYOSU2E
 {
     CLLocation *location = [locations lastObject];
     [self.locationManager stopUpdatingLocation];
-    [[MSFourSquareSessionManager sharedClient] GET:[NSString stringWithFormat:@"venues/search?ll=%f,%f",location.coordinate.latitude,location.coordinate.longitude] parameters:@{@"client_id" : kMSCLIENTID, @"client_secret" : kMSCLIENTSECRET, @"v" : @"20140416"} success:^(NSURLSessionDataTask *task, id responseObject)
+    [[MSFourSquareSessionManager sharedClient] GET:[NSString stringWithFormat:@"venues/search?ll=%f,%f",location.coordinate.latitude+latitudeOffset,location.coordinate.longitude+longitudeOffset] parameters:@{@"client_id" : kMSCLIENTID, @"client_secret" : kMSCLIENTSECRET, @"v" : @"20140416"} success:^(NSURLSessionDataTask *task, id responseObject)
     {
         NSArray *venues = responseObject;
         self.venues = venues;

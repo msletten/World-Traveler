@@ -15,8 +15,8 @@
 
 @property (strong, nonatomic) IBOutlet MKMapView *directionsMap;
 @property (strong, nonatomic) Venue *venue;
-@property (strong, nonatomic) NSArray *steps;
 @property (strong, nonatomic) CLLocationManager *locationManager;
+@property (strong, nonatomic) NSArray *steps;
 
 - (IBAction)listDirectionsBarButtonPressed:(UIBarButtonItem *)sender;
 @end
