@@ -13,5 +13,7 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 - (IBAction)refreshBarButtonPressed:(UIBarButtonItem *)sender;
+- (IBAction)menuBarButtonPressed:(UIBarButtonItem *)sender;
+
 
 @end

@@ -59,6 +59,7 @@
     MKRouteStep *step = route.steps[indexPath.row];
     cell.textLabel.text = step.instructions;
     cell.detailTextLabel.text = step.notice;
+    [self loadSnapShots:indexPath];
     
     return cell;
 }
@@ -73,5 +74,41 @@
     label.text = [NSString stringWithFormat:@"Route %i", section + 1];
     return label;
 }
+
+#pragma mark - Map Snapshots Helper
+//In order to load the snapshots of our map for our directions we will create a helper method which will accept an NSIndexPath object as a parameter. Using our MKRouteStep obtained from our steps array we can create an MKSnapShotOptions object with the appropriate region and size. With a MKSnapShotOptions object we can create an MKMapSnapshotter to request images of our directions. Since the request occurs asynchronously we update the cells imageView property as the information is returned.
+- (void)loadSnapShots:(NSIndexPath *)indexPath
+{
+    MKRoute *route = self.steps[indexPath.section];
+    MKRouteStep *step = route.steps[indexPath.row];
+    MKMapSnapshotOptions *options = [[MKMapSnapshotOptions alloc] init];
+    options.scale = [UIScreen mainScreen].scale;
+    
+    MKMapRect rect;
+    rect.origin = step.polyline.points[0];
+    rect.size = MKMapSizeMake(0.0, 0.0);
+    MKCoordinateRegion region = MKCoordinateRegionForMapRect(rect);
+    region.span.latitudeDelta = 0.001;
+    region.span.longitudeDelta = 0.001;
+    options.region = region;
+    options.size = CGSizeMake(40.0, 40.0);
+    MKMapSnapshotter *snapshotter = [[MKMapSnapshotter alloc] initWithOptions:options];
+    [snapshotter startWithCompletionHandler:^(MKMapSnapshot *snapshot, NSError *error)
+    {
+        if (error)
+        {
+            NSLog(@"error %@", error);
+        }
+        else if (!error)
+        {
+            UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+            cell.imageView.image = snapshot.image;
+            [cell setNeedsLayout];
+        }
+    }];
+}
+
+
+
 
 @end

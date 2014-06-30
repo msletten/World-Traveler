@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0856E85E1961E75A008AE6AD /* MSMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0856E85D1961E75A008AE6AD /* MSMenuViewController.m */; };
+		0856E8611961F0DB008AE6AD /* menu-icon-2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0856E85F1961F0DB008AE6AD /* menu-icon-2x.png */; };
+		0856E8621961F0DB008AE6AD /* menu-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0856E8601961F0DB008AE6AD /* menu-icon.png */; };
 		08A51B63195B98620073CBA7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A51B62195B98620073CBA7 /* Foundation.framework */; };
 		08A51B65195B98620073CBA7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A51B64195B98620073CBA7 /* CoreGraphics.framework */; };
 		08A51B67195B98620073CBA7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A51B66195B98620073CBA7 /* UIKit.framework */; };
@@ -51,6 +54,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0856E85C1961E75A008AE6AD /* MSMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMenuViewController.h; sourceTree = "<group>"; };
+		0856E85D1961E75A008AE6AD /* MSMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMenuViewController.m; sourceTree = "<group>"; };
+		0856E85F1961F0DB008AE6AD /* menu-icon-2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-icon-2x.png"; sourceTree = "<group>"; };
+		0856E8601961F0DB008AE6AD /* menu-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-icon.png"; sourceTree = "<group>"; };
 		08A51B5F195B98620073CBA7 /* World Traveler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "World Traveler.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08A51B62195B98620073CBA7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		08A51B64195B98620073CBA7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -182,6 +189,8 @@
 		08A51B69195B98620073CBA7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0856E85F1961F0DB008AE6AD /* menu-icon-2x.png */,
+				0856E8601961F0DB008AE6AD /* menu-icon.png */,
 				08A51B6A195B98620073CBA7 /* World Traveler-Info.plist */,
 				08A51B6B195B98620073CBA7 /* InfoPlist.strings */,
 				08A51B6E195B98620073CBA7 /* main.m */,
@@ -238,6 +247,8 @@
 				08A51BD5195E1B2A0073CBA7 /* MSDirectionsViewController.m */,
 				08A51BD7195E37230073CBA7 /* MSDirectionsListViewController.h */,
 				08A51BD8195E37230073CBA7 /* MSDirectionsListViewController.m */,
+				0856E85C1961E75A008AE6AD /* MSMenuViewController.h */,
+				0856E85D1961E75A008AE6AD /* MSMenuViewController.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -361,8 +372,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				08A51B7B195B98630073CBA7 /* Images.xcassets in Resources */,
+				0856E8611961F0DB008AE6AD /* menu-icon-2x.png in Resources */,
 				08A51B6D195B98620073CBA7 /* InfoPlist.strings in Resources */,
 				08A51B76195B98620073CBA7 /* Main.storyboard in Resources */,
+				0856E8621961F0DB008AE6AD /* menu-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +433,7 @@
 				08A51BB3195CF04F0073CBA7 /* Contact.m in Sources */,
 				08A51BD9195E37230073CBA7 /* MSDirectionsListViewController.m in Sources */,
 				08A51BD6195E1B2A0073CBA7 /* MSDirectionsViewController.m in Sources */,
+				0856E85E1961E75A008AE6AD /* MSMenuViewController.m in Sources */,
 				08A51BA2195BB9730073CBA7 /* MSMapViewController.m in Sources */,
 				08A51BB0195CF04F0073CBA7 /* Venue.m in Sources */,
 				08A51BD2195DEBA40073CBA7 /* AFMMRecordResponseSerializationMapper.m in Sources */,

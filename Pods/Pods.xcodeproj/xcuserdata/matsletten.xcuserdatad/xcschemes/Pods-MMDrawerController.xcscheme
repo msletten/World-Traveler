@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A82B435EAF644D6A8FEF8D64"
-               BuildableName = "libPods-MagicalRecord.a"
-               BlueprintName = "Pods-MagicalRecord"
+               BlueprintIdentifier = "FEE745ACF6D74F88BD2BF1CD"
+               BuildableName = "libPods-MMDrawerController.a"
+               BlueprintName = "Pods-MMDrawerController"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

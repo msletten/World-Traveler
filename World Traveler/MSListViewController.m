@@ -13,6 +13,7 @@
 #import "Venue.h"
 #import "Location.h"
 #import "MSMapViewController.h"
+#import "MSAppDelegate.h"
 
 static NSString *const kMSCLIENTID = @"3VSOUARZJAMSZULCEARWLX5BTYL2U5XOE1ML4FRUTMC5EGLJ";
 static NSString *const kMSCLIENTSECRET = @"15C555UQY5XAE2WAHTTFB5WV1SAQRIQYOSU2EU35WLTY2QRH";
@@ -79,6 +80,11 @@ static NSString *const kMSCLIENTSECRET = @"15C555UQY5XAE2WAHTTFB5WV1SAQRIQYOSU2E
     [self.locationManager startUpdatingLocation];
 }
 
+- (IBAction)menuBarButtonPressed:(UIBarButtonItem *)sender
+{
+    [[self drawControllerFromAppDelegate] toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+}
+
 #pragma mark - CLLocationManagerDelegate
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
@@ -123,6 +129,16 @@ static NSString *const kMSCLIENTSECRET = @"15C555UQY5XAE2WAHTTFB5WV1SAQRIQYOSU2E
 {
     [self performSegueWithIdentifier:@"listToMapSegue" sender:indexPath];
 }
+
+#pragma mark - DrawerController
+//In order to call the animation from our IBAction we need access to our drawController. This is easily accomplished with a helper method.
+- (MMDrawerController *) drawControllerFromAppDelegate
+{
+    MSAppDelegate *appDelegate = (MSAppDelegate *)[[UIApplication sharedApplication] delegate];
+    return appDelegate.drawerController;
+}
+
+
 
 
 @end

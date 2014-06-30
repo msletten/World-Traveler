@@ -54,6 +54,18 @@
 #define COCOAPODS_VERSION_MINOR_MBProgressHUD 8
 #define COCOAPODS_VERSION_PATCH_MBProgressHUD 0
 
+// MMDrawerController/Core
+#define COCOAPODS_POD_AVAILABLE_MMDrawerController_Core
+#define COCOAPODS_VERSION_MAJOR_MMDrawerController_Core 0
+#define COCOAPODS_VERSION_MINOR_MMDrawerController_Core 5
+#define COCOAPODS_VERSION_PATCH_MMDrawerController_Core 3
+
+// MMDrawerController/MMDrawerVisualStates
+#define COCOAPODS_POD_AVAILABLE_MMDrawerController_MMDrawerVisualStates
+#define COCOAPODS_VERSION_MAJOR_MMDrawerController_MMDrawerVisualStates 0
+#define COCOAPODS_VERSION_MINOR_MMDrawerController_MMDrawerVisualStates 5
+#define COCOAPODS_VERSION_PATCH_MMDrawerController_MMDrawerVisualStates 3
+
 // MMRecord
 #define COCOAPODS_POD_AVAILABLE_MMRecord
 #define COCOAPODS_VERSION_MAJOR_MMRecord 1

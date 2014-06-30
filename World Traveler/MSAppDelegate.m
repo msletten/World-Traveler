@@ -7,13 +7,39 @@
 //
 
 #import "MSAppDelegate.h"
+#import "MSMenuViewController.h"
+#import "MSListViewController.h"
+#include "MMDrawerVisualState.h"
 
 @implementation MSAppDelegate
+
+//Next implement the method willFinishLaunchingWithOptions. In this method we will access our Storyboard as an object and use that object to instantiate our viewcontroller’s. We also need to setup the window based on the screen’s bounds and then set the rootViewController as the drawerController.
+
+- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    [MagicalRecord setupCoreDataStackWithStoreNamed:@"WorldTravelerModel"];
+    
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    MSMenuViewController *menuController = (MSMenuViewController *)[mainStoryboard instantiateViewControllerWithIdentifier:@"MenuViewControllerID"];
+    MSListViewController *listViewController = (MSListViewController *)[mainStoryboard instantiateViewControllerWithIdentifier:@"ListViewControllerID"];
+    
+    self.drawerController = [[MMDrawerController alloc] initWithCenterViewController:listViewController leftDrawerViewController:menuController];
+    [self.drawerController setMaximumLeftDrawerWidth:240.0];
+    [self.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+    [self.drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+    [self.drawerController setDrawerVisualStateBlock:[MMDrawerVisualState swingingDoorVisualStateBlock]];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self.window setRootViewController:self.drawerController];
+    
+    return YES;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    [MagicalRecord setupCoreDataStackWithStoreNamed:@"WorldTravelerModel"];
+    
+    [self.window makeKeyAndVisible];
     return YES;
 }
 							
