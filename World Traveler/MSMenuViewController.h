@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MSMenuViewController : UIViewController
+@interface MSMenuViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
