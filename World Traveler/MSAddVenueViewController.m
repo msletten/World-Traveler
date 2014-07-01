@@ -8,6 +8,10 @@
 
 #import "MSAddVenueViewController.h"
 #import "MSAppDelegate.h"
+#import "Venue.h"
+#import "Contact.h"
+#import "FSCategory.h"
+
 @interface MSAddVenueViewController ()
 
 @end
@@ -35,7 +39,26 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)saveButtonPressed:(UIButton *)sender {
+- (IBAction)saveButtonPressed:(UIButton *)sender
+{
+    if ([self.venueNameTextField.text isEqualToString:@""])
+    {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Blank Field" message:@"Please enter a name!" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
+        [alertView show];
+    }
+    else
+    {
+        Venue *venue = [Venue MR_createEntity];
+        venue.name = self.venueNameTextField.text;
+        Contact *contact = [Contact MR_createEntity];
+        contact.phone = self.phoneNumberTextField.text;
+        venue.contact = contact;
+        FSCategory *category = [FSCategory MR_createEntity];
+        category.name = self.foodTypeTextField.text;
+        venue.categories = category;
+        venue.favorite = [NSNumber numberWithBool:YES];
+        [[NSManagedObjectContext MR_defaultContext] MR_saveOnlySelfAndWait];
+    }
 }
 
 - (IBAction)menuBarButtonPressed:(UIBarButtonItem *)sender
