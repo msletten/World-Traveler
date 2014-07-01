@@ -2,7 +2,7 @@
 //  Venue.m
 //  World Traveler
 //
-//  Created by Mat Sletten on 6/26/14.
+//  Created by Mat Sletten on 7/1/14.
 //  Copyright (c) 2014 Mat Sletten. All rights reserved.
 //
 
@@ -15,14 +15,15 @@
 
 @implementation Venue
 
-@dynamic name;
 @dynamic id;
+@dynamic name;
+@dynamic favorite;
 @dynamic categories;
 @dynamic contact;
 @dynamic location;
 @dynamic menu;
 
-+ (NSString *)keyPathForResponseObject
++ (NSString *) keyPathForResponseObject
 {
     return @"response.venues";
 }

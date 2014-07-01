@@ -18,6 +18,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *addressLabel;
 
-
 - (IBAction)ShowDirectionsBarButtonPressed:(UIBarButtonItem *)sender;
+- (IBAction)favoriteButtonPressed:(UIButton *)sender;
+
 @end

@@ -2,7 +2,7 @@
 //  Venue.h
 //  World Traveler
 //
-//  Created by Mat Sletten on 6/26/14.
+//  Created by Mat Sletten on 7/1/14.
 //  Copyright (c) 2014 Mat Sletten. All rights reserved.
 //
 
@@ -14,8 +14,9 @@
 
 @interface Venue : MSRecord
 
-@property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * id;
+@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSNumber * favorite;
 @property (nonatomic, retain) FSCategory *categories;
 @property (nonatomic, retain) Contact *contact;
 @property (nonatomic, retain) Location *location;

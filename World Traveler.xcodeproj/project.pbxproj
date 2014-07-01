@@ -10,6 +10,9 @@
 		0856E85E1961E75A008AE6AD /* MSMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0856E85D1961E75A008AE6AD /* MSMenuViewController.m */; };
 		0856E8611961F0DB008AE6AD /* menu-icon-2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0856E85F1961F0DB008AE6AD /* menu-icon-2x.png */; };
 		0856E8621961F0DB008AE6AD /* menu-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0856E8601961F0DB008AE6AD /* menu-icon.png */; };
+		0856E86519631214008AE6AD /* MSFavoriteVenuesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0856E86419631214008AE6AD /* MSFavoriteVenuesViewController.m */; };
+		0856E86819631226008AE6AD /* MSAddVenueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0856E86719631226008AE6AD /* MSAddVenueViewController.m */; };
+		0856E86B19634425008AE6AD /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = 0856E86A19634425008AE6AD /* Venue.m */; };
 		08A51B63195B98620073CBA7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A51B62195B98620073CBA7 /* Foundation.framework */; };
 		08A51B65195B98620073CBA7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A51B64195B98620073CBA7 /* CoreGraphics.framework */; };
 		08A51B67195B98620073CBA7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A51B66195B98620073CBA7 /* UIKit.framework */; };
@@ -28,7 +31,6 @@
 		08A51BA8195CB0020073CBA7 /* WorldTravelerModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 08A51BA6195CB0020073CBA7 /* WorldTravelerModel.xcdatamodeld */; };
 		08A51BAA195CB0620073CBA7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A51BA9195CB0620073CBA7 /* CoreData.framework */; };
 		08A51BAD195CF04E0073CBA7 /* Menu.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A51BAC195CF04E0073CBA7 /* Menu.m */; };
-		08A51BB0195CF04F0073CBA7 /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A51BAF195CF04F0073CBA7 /* Venue.m */; };
 		08A51BB3195CF04F0073CBA7 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A51BB2195CF04F0073CBA7 /* Contact.m */; };
 		08A51BB6195CF04F0073CBA7 /* FSCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A51BB5195CF04F0073CBA7 /* FSCategory.m */; };
 		08A51BB9195CF04F0073CBA7 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A51BB8195CF04F0073CBA7 /* Location.m */; };
@@ -58,6 +60,12 @@
 		0856E85D1961E75A008AE6AD /* MSMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMenuViewController.m; sourceTree = "<group>"; };
 		0856E85F1961F0DB008AE6AD /* menu-icon-2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-icon-2x.png"; sourceTree = "<group>"; };
 		0856E8601961F0DB008AE6AD /* menu-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-icon.png"; sourceTree = "<group>"; };
+		0856E86319631214008AE6AD /* MSFavoriteVenuesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSFavoriteVenuesViewController.h; sourceTree = "<group>"; };
+		0856E86419631214008AE6AD /* MSFavoriteVenuesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSFavoriteVenuesViewController.m; sourceTree = "<group>"; };
+		0856E86619631226008AE6AD /* MSAddVenueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAddVenueViewController.h; sourceTree = "<group>"; };
+		0856E86719631226008AE6AD /* MSAddVenueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSAddVenueViewController.m; sourceTree = "<group>"; };
+		0856E86919634425008AE6AD /* Venue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Venue.h; sourceTree = "<group>"; };
+		0856E86A19634425008AE6AD /* Venue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Venue.m; sourceTree = "<group>"; };
 		08A51B5F195B98620073CBA7 /* World Traveler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "World Traveler.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08A51B62195B98620073CBA7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		08A51B64195B98620073CBA7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -83,8 +91,6 @@
 		08A51BA9195CB0620073CBA7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		08A51BAB195CF04E0073CBA7 /* Menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Menu.h; sourceTree = "<group>"; };
 		08A51BAC195CF04E0073CBA7 /* Menu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Menu.m; sourceTree = "<group>"; };
-		08A51BAE195CF04F0073CBA7 /* Venue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Venue.h; sourceTree = "<group>"; };
-		08A51BAF195CF04F0073CBA7 /* Venue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Venue.m; sourceTree = "<group>"; };
 		08A51BB1195CF04F0073CBA7 /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
 		08A51BB2195CF04F0073CBA7 /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
 		08A51BB4195CF04F0073CBA7 /* FSCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCategory.h; sourceTree = "<group>"; };
@@ -249,6 +255,10 @@
 				08A51BD8195E37230073CBA7 /* MSDirectionsListViewController.m */,
 				0856E85C1961E75A008AE6AD /* MSMenuViewController.h */,
 				0856E85D1961E75A008AE6AD /* MSMenuViewController.m */,
+				0856E86319631214008AE6AD /* MSFavoriteVenuesViewController.h */,
+				0856E86419631214008AE6AD /* MSFavoriteVenuesViewController.m */,
+				0856E86619631226008AE6AD /* MSAddVenueViewController.h */,
+				0856E86719631226008AE6AD /* MSAddVenueViewController.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -256,6 +266,8 @@
 		08A51BBA195CF0720073CBA7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0856E86919634425008AE6AD /* Venue.h */,
+				0856E86A19634425008AE6AD /* Venue.m */,
 				08A51BBB195CF1030073CBA7 /* MSRecord.h */,
 				08A51BBC195CF1030073CBA7 /* MSRecord.m */,
 				08A51BB7195CF04F0073CBA7 /* Location.h */,
@@ -264,8 +276,6 @@
 				08A51BB5195CF04F0073CBA7 /* FSCategory.m */,
 				08A51BB1195CF04F0073CBA7 /* Contact.h */,
 				08A51BB2195CF04F0073CBA7 /* Contact.m */,
-				08A51BAE195CF04F0073CBA7 /* Venue.h */,
-				08A51BAF195CF04F0073CBA7 /* Venue.m */,
 				08A51BAB195CF04E0073CBA7 /* Menu.h */,
 				08A51BAC195CF04E0073CBA7 /* Menu.m */,
 			);
@@ -429,13 +439,15 @@
 			files = (
 				08A51BA8195CB0020073CBA7 /* WorldTravelerModel.xcdatamodeld in Sources */,
 				08A51BC1195DDCF20073CBA7 /* MSFourSquareSessionManager.m in Sources */,
+				0856E86519631214008AE6AD /* MSFavoriteVenuesViewController.m in Sources */,
 				08A51BD3195DEBA40073CBA7 /* AFMMRecordResponseSerializer.m in Sources */,
+				0856E86819631226008AE6AD /* MSAddVenueViewController.m in Sources */,
 				08A51BB3195CF04F0073CBA7 /* Contact.m in Sources */,
 				08A51BD9195E37230073CBA7 /* MSDirectionsListViewController.m in Sources */,
 				08A51BD6195E1B2A0073CBA7 /* MSDirectionsViewController.m in Sources */,
+				0856E86B19634425008AE6AD /* Venue.m in Sources */,
 				0856E85E1961E75A008AE6AD /* MSMenuViewController.m in Sources */,
 				08A51BA2195BB9730073CBA7 /* MSMapViewController.m in Sources */,
-				08A51BB0195CF04F0073CBA7 /* Venue.m in Sources */,
 				08A51BD2195DEBA40073CBA7 /* AFMMRecordResponseSerializationMapper.m in Sources */,
 				08A51B73195B98620073CBA7 /* MSAppDelegate.m in Sources */,
 				08A51B79195B98620073CBA7 /* MSListViewController.m in Sources */,

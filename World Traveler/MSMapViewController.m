@@ -67,4 +67,10 @@
 {
     [self performSegueWithIdentifier:@"mapToDirectionsSegue" sender:nil];
 }
+//When the user presses favoriteBarButtonItemPressed update the favorite property and then call save using MR_saveOnlySelfAndWait
+- (IBAction)favoriteButtonPressed:(UIButton *)sender
+{
+    self.venue.favorite = [NSNumber numberWithBool:YES];
+    [[NSManagedObjectContext MR_defaultContext] MR_saveOnlySelfAndWait];
+}
 @end

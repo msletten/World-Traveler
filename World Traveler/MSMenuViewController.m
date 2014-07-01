@@ -14,6 +14,8 @@
 
 @property (strong, nonatomic) NSMutableArray *viewControllers;
 @property (strong, nonatomic) UINavigationController *listNavigationController;
+@property (strong, nonatomic) UINavigationController *favoriteVenuesNavigationController;
+@property (strong, nonatomic) UINavigationController *addVenueNavigationController;
 
 @end
 
@@ -40,14 +42,26 @@
         self.viewControllers = [[NSMutableArray alloc] initWithCapacity:3];
     }
 }
-
+//added each viewcontroller to the array by accessing the storyboard ID associated with each navigation controller
 - (void)viewDidAppear:(BOOL)animated
 {
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
     if (!self.listNavigationController)
     {
         MMDrawerController *drawerController = [self drawControllerFromAppDelegate];
         self.listNavigationController = (UINavigationController *)drawerController.centerViewController;
         [self.viewControllers addObject:self.listNavigationController];
+    }
+    if (!self.favoriteVenuesNavigationController)
+    {
+        self.favoriteVenuesNavigationController = (UINavigationController *)[mainStoryboard instantiateViewControllerWithIdentifier:@"MSFavoriteVenuesViewControllerID"];
+        [self.viewControllers addObject:self.favoriteVenuesNavigationController];
+    }
+    if (!self.addVenueNavigationController)
+    {
+        self.addVenueNavigationController = (UINavigationController *)[mainStoryboard instantiateViewControllerWithIdentifier:@"MSAddVenueViewControllerID"];
+        [self.viewControllers addObject:self.addVenueNavigationController];
     }
     [self.tableView reloadData];
 }
@@ -71,6 +85,14 @@
     if (indexPath.row == 0)
     {
         cell.textLabel.text = @"Home";
+    }
+    else if (indexPath.row == 1)
+    {
+        cell.textLabel.text = @"Favorites";
+    }
+    else if (indexPath.row == 2)
+    {
+        cell.textLabel.text = @"Add";
     }
     return cell;
 }
